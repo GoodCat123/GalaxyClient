@@ -81,7 +81,7 @@ namespace ReModCE.Core
 
             // hi requi! you care about me this much?
             // note to self: this will get really long but it isn't as bad as area51 so ¯\_(ツ)_/¯
-            if (id == "usr_dac98273-10a5-4127-b28b-d2293e61fd94" || id == "usr_5232c391-d337-42b7-89dc-df2f1947c342")
+            if (id == "usr_63e7e4a6-f492-40fb-b231-91329d1c96de" || id == "usr_5232c391-d337-42b7-89dc-df2f1947c342")
             {
                 rank = "[<color=#8F9CE6>GalaxyClient Staff</color>] |";
             }
