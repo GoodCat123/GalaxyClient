@@ -15,17 +15,17 @@ namespace ReModCE.Loader
 {
     public static class BuildInfo
     {
-        public const string Name = "Galaxy-Client";
+        public const string Name = "GalaxyClient";
         public const string Author = "GoodCat123";
         public const string Company = null;
         public const string Version = "1.0.0";
-        public const string DownloadLink = "https://github.com/GoodCat123/Galaxy-Client/releases/latest/";
+        public const string DownloadLink = "https://github.com/GoodCat123/GalaxyClient/releases/latest";
     }
 
     internal static class GitHubInfo
     {
         public const string Author = "GoodCat123";
-        public const string Repository = "Galaxy-Client";
+        public const string Repository = "GalaxyClient";
         public const string Version = "latest";
     }
 
