@@ -92,7 +92,7 @@ namespace ReModCE
             ReLogger.Msg(ConsoleColor.Blue, "                                             I'm a skid                                    ");
             ReLogger.Msg(ConsoleColor.Blue, "                                                            ");
             ReLogger.Msg(ConsoleColor.Blue, "                                               Credits:                           ");
-            ReLogger.Msg(ConsoleColor.Blue, "                               Requi, GoodCat, Dred (emotional support)      ");
+            ReLogger.Msg(ConsoleColor.Blue, "             Requi, GoodCat, Dred (emotional support), Stellar, Evileye, lenoob, Unixian     ");
             ReLogger.Msg("================================================================================================================");
         }
 
@@ -162,6 +162,12 @@ namespace ReModCE
             visualPage.AddCategory("Wireframe");
             visualPage.AddCategory("Nametags");
             visualPage.AddCategory("Menu");
+            
+            var exploitsPage = _uiManager.MainMenu.AddCategoryPage("Exploits", "lmao", ResourceManager.GetSprite("remodce.exploits"));
+            exploitsPage.AddCategory("USpeak");
+            exploitsPage.AddCategory("Events");
+            exploitsPage.AddCategory("Items");
+            exploitsPage.AddCategory("Avatar");
 
             _uiManager.MainMenu.AddMenuPage("Dynamic Bones", "Access your global dynamic bone settings", ResourceManager.GetSprite("remodce.bone"));
             _uiManager.MainMenu.AddMenuPage("Avatars", "Access avatar related settings", ResourceManager.GetSprite("remodce.hanger"));
@@ -173,8 +179,8 @@ namespace ReModCE
             _uiManager.MainMenu.AddMenuPage("Logging", "Access logging related settings", ResourceManager.GetSprite("remodce.log"));
             _uiManager.MainMenu.AddMenuPage("Hotkeys", "Access hotkey related settings", ResourceManager.GetSprite("remodce.keyboard"));
 
-            var remodMenu = _uiManager.MainMenu.AddButton("Discord", "Join my Discord if you need help or if you just want to chat!",
-                () => { Process.Start("https://discord.gg/3Eb5Cq3PvC"); }, ResourceManager.GetSprite("remodce.discord"));
+            var remodMenu = _uiManager.MainMenu.AddButton("Discord", "Join the client server",
+                () => { Process.Start("https://discord.gg/jsfJEGF6qz"); }, ResourceManager.GetSprite("remodce.discord"));
 
             foreach (var m in Components)
             {

@@ -71,6 +71,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\3rdparty\ml\Managed\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Photon-DotNet">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\Photon-DotNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -294,13 +297,22 @@
     <Compile Include="Components\ThirdPersonComponent.cs" />
     <Compile Include="Components\VRCNewsAdjustment.cs" />
     <Compile Include="Components\WireframeComponent.cs" />
+    <Compile Include="Config\AvatarProtectionConfig.cs" />
+    <Compile Include="Config\Config.cs" />
     <Compile Include="Core\ApiError.cs" />
     <Compile Include="Core\BinaryGZipSerializer.cs" />
     <Compile Include="Core\DynamicContractResolver.cs" />
     <Compile Include="Core\NamePlates.cs" />
     <Compile Include="Core\ReAvatar.cs" />
     <Compile Include="Core\TaskExtensions.cs" />
+    <Compile Include="Exploits\Event1-USpeak.cs" />
+    <Compile Include="Exploits\Event6.cs" />
+    <Compile Include="Exploits\ItemLagger.cs" />
+    <Compile Include="Exploits\PCAviCrash.cs" />
+    <Compile Include="Exploits\QuestAviCrash.cs" />
     <Compile Include="Managers\RiskyFunctionsManager.cs" />
+    <Compile Include="PhotonExtension\PhotonExtensions.cs" />
+    <Compile Include="PhotonExtension\Serialization.cs" />
     <Compile Include="ReMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SDK\GeneralWrapper.cs" />
@@ -313,6 +325,8 @@
     <Compile Include="SDK\Utils\PlayerUtils.cs" />
     <Compile Include="SDK\Utils\WorldUtils.cs" />
     <Compile Include="SDK\WorldWrapper.cs" />
+    <Compile Include="USpeak\LoudUSpeak.cs" />
+    <Compile Include="USpeak\LowBitRateUSpeak.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReModCE.Loader\ReModCE.Loader.csproj">
