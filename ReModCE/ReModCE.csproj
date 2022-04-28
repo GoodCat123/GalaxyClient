@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4EA50331-5D4E-47D3-BDA5-260600CFF84C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReModCE</RootNamespace>
+    <AssemblyName>ReModCE</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="DataModel">
+      <HintPath>..\3rdparty\ml\Managed\DataModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\3rdparty\ml\Managed\Il2CppSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\3rdparty\ml\Managed\Il2CppSystem.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MelonLoader, Version=0.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\MelonLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>..\3rdparty\ml\Managed\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnhollowerBaseLib, Version=0.4.15.4, Culture=neutral, PublicKeyToken=null">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnhollowerBaseLib.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.TextMeshPro">
+      <HintPath>..\3rdparty\ml\Managed\UniTask.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>..\3rdparty\ml\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\3rdparty\ml\Managed\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <Private>false</Private>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.TextCoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.Udon">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.Udon.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.Udon.ClientBindings">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.Udon.ClientBindings.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.Udon.Common">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.Udon.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.Udon.Security">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.Udon.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.Udon.Serialization.AOT">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.Udon.Serialization.AOT.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.Udon.Serialization.OdinSerializer">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.Udon.Serialization.OdinSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.Udon.VM">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.Udon.VM.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.Udon.VRCWrapperModules">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.Udon.VRCWrapperModules.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.Udon.Wrapper">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.Udon.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="VRC.UI.Core">
+      <HintPath>..\3rdparty\ml\Managed\VRC.UI.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VRC.UI.Elements">
+      <HintPath>..\3rdparty\ml\Managed\VRC.UI.Elements.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VRC.UI.Shared">
+      <HintPath>..\3rdparty\ml\Managed\VRC.UI.Shared.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VRC.Utility">
+      <HintPath>..\3rdparty\ml\Managed\VRC.Utility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VRCCore-Standalone, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\VRCCore-Standalone.dll</HintPath>
+    </Reference>
+    <Reference Include="VRCSDK2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\VRCSDK2.dll</HintPath>
+    </Reference>
+    <Reference Include="VRCSDK3, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\VRCSDK3.dll</HintPath>
+    </Reference>
+    <Reference Include="VRCSDK3A">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\VRCSDK3A.dll</HintPath>
+    </Reference>
+    <Reference Include="VRCSDKBase, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>false</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\ml\Managed\VRCSDKBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\AvatarFavoritesComponent.cs" />
+    <Compile Include="Components\CalibrationSavingComponent.cs" />
+    <Compile Include="Components\CopyUserInformationComponent.cs" />
+    <Compile Include="Components\DisableChairComponent.cs" />
+    <Compile Include="Components\DiscordPopupComponent.cs" />
+    <Compile Include="Components\DynamicBonesComponent.cs" />
+    <Compile Include="Components\EmojiBlocker.cs" />
+    <Compile Include="Components\FlyComponent.cs" />
+    <Compile Include="Components\HighlightsComponent.cs" />
+    <Compile Include="Components\InfoLogsComponent.cs" />
+    <Compile Include="Components\InstanceDejavuComponent.cs" />
+    <Compile Include="Components\InstanceHistoryComponent.cs" />
+    <Compile Include="Components\InstanceLinkComponent.cs" />
+    <Compile Include="Components\LineTracerComponent.cs" />
+    <Compile Include="Components\LoadingMusicComponent.cs" />
+    <Compile Include="Components\MediaControlComponent.cs" />
+    <Compile Include="Components\PopupExComponent.cs" />
+    <Compile Include="Components\AvatarHistoryComponent.cs" />
+    <Compile Include="Components\PortalConfirmationComponent.cs" />
+    <Compile Include="Components\RestartButtonComponent.cs" />
+    <Compile Include="Components\TeleportComponent.cs" />
+    <Compile Include="Components\ThirdPersonComponent.cs" />
+    <Compile Include="Components\VRCNewsAdjustment.cs" />
+    <Compile Include="Components\WireframeComponent.cs" />
+    <Compile Include="Core\ApiError.cs" />
+    <Compile Include="Core\BinaryGZipSerializer.cs" />
+    <Compile Include="Core\DynamicContractResolver.cs" />
+    <Compile Include="Core\NamePlates.cs" />
+    <Compile Include="Core\ReAvatar.cs" />
+    <Compile Include="Core\TaskExtensions.cs" />
+    <Compile Include="Managers\RiskyFunctionsManager.cs" />
+    <Compile Include="ReMod.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SDK\GeneralWrapper.cs" />
+    <Compile Include="SDK\PlayerWrapper.cs" />
+    <Compile Include="SDK\Utils\DelegateWrappers.cs" />
+    <Compile Include="SDK\Utils\FastMethodInfo.cs" />
+    <Compile Include="SDK\Utils\GeneralUtils.cs" />
+    <Compile Include="SDK\Utils\PlayerInfo.cs" />
+    <Compile Include="SDK\Utils\PlayerRankStatus.cs" />
+    <Compile Include="SDK\Utils\PlayerUtils.cs" />
+    <Compile Include="SDK\Utils\WorldUtils.cs" />
+    <Compile Include="SDK\WorldWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReModCE.Loader\ReModCE.Loader.csproj">
+      <Project>{6e5e0e59-73d9-4d74-b734-d040d26710c4}</Project>
+      <Name>ReModCE.Loader</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ReMod.Core\ReMod.Core.csproj">
+      <Project>{c87fe758-acb9-4fa2-af6f-10aa9aa0023c}</Project>
+      <Name>ReMod.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\*.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Accessibility.dll" />
+    <Content Include="Assembly-CSharp-firstpass.dll" />
+    <Content Include="Assembly-CSharp.dll" />
+    <Content Include="AVProVideo.Extensions.Timeline.dll" />
+    <Content Include="AVProVideo.Extensions.UnityUI.dll" />
+    <Content Include="AVProVideo.Extensions.VisualEffectGraph.dll" />
+    <Content Include="AVProVideo.Runtime.dll" />
+    <Content Include="BeeByteObfuscator.dll" />
+    <Content Include="BlobHandles.Runtime.dll" />
+    <Content Include="Boo.Lang.Compiler.dll" />
+    <Content Include="Boo.Lang.dll" />
+    <Content Include="Boo.Lang.Extensions.dll" />
+    <Content Include="Boo.Lang.Parser.dll" />
+    <Content Include="Boo.Lang.PatternMatching.dll" />
+    <Content Include="Boo.Lang.Useful.dll" />
+    <Content Include="Cinemachine.dll" />
+    <Content Include="clipper_library.dll" />
+    <Content Include="Collections.Pooled.dll" />
+    <Content Include="Commons.Xml.Relaxng.dll" />
+    <Content Include="cscompmgd.dll" />
+    <Content Include="CustomMarshalers.dll" />
+    <Content Include="DataModel.dll" />
+    <Content Include="DOTween.dll" />
+    <Content Include="DOTween.Modules.dll" />
+    <Content Include="Facepunch.Steamworks.Win64.dll" />
+    <Content Include="I18N.CJK.dll" />
+    <Content Include="I18N.dll" />
+    <Content Include="I18N.MidEast.dll" />
+    <Content Include="I18N.Other.dll" />
+    <Content Include="I18N.Rare.dll" />
+    <Content Include="I18N.West.dll" />
+    <Content Include="IBM.Data.DB2.dll" />
+    <Content Include="Iced.dll" />
+    <Content Include="Il2CppMono.Security.dll" />
+    <Content Include="Il2Cppmscorlib.dll" />
+    <Content Include="Il2CppNewtonsoft.Json.dll" />
+    <Content Include="Il2CppSystem.Buffers.dll" />
+    <Content Include="Il2CppSystem.Collections.Immutable.dll" />
+    <Content Include="Il2CppSystem.Configuration.dll" />
+    <Content Include="Il2CppSystem.Core.dll" />
+    <Content Include="Il2CppSystem.Diagnostics.StackTrace.dll" />
+    <Content Include="Il2CppSystem.dll" />
+    <Content Include="Il2CppSystem.Globalization.Extensions.dll" />
+    <Content Include="Il2CppSystem.IO.Compression.dll" />
+    <Content Include="Il2CppSystem.Memory.dll" />
+    <Content Include="Il2CppSystem.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="Il2CppSystem.Runtime.dll" />
+    <Content Include="Il2CppSystem.Runtime.Serialization.dll" />
+    <Content Include="Il2CppSystem.Threading.Tasks.Extensions.dll" />
+    <Content Include="Il2CppSystem.ValueTuple.dll" />
+    <Content Include="Il2CppSystem.Xml.dll" />
+    <Content Include="Il2CppSystem.Xml.Linq.dll" />
+    <Content Include="MelonLoader.dll" />
+    <Content Include="Microsoft.CSharp.dll" />
+    <Content Include="Microsoft.Web.Infrastructure.dll" />
+    <Content Include="Mono.CompilerServices.SymbolWriter.dll" />
+    <Content Include="Mono.CSharp.dll" />
+    <Content Include="Mono.Data.Sqlite.dll" />
+    <Content Include="Mono.Data.Tds.dll" />
+    <Content Include="Mono.Messaging.dll" />
+    <Content Include="Mono.Posix.dll" />
+    <Content Include="Mono.Security.dll" />
+    <Content Include="Mono.WebBrowser.dll" />
+    <Content Include="mscorlib.dll" />
+    <Content Include="netstandard.dll" />
+    <Content Include="Newtonsoft.Json.dll" />
+    <Content Include="Newtonsoft.Json.xml" />
+    <Content Include="Novell.Directory.Ldap.dll" />
+    <Content Include="Oculus.Platform.dll" />
+    <Content Include="Oculus.VR.dll" />
+    <Content Include="OscCore.Runtime.dll" />
+    <Content Include="Photon-DotNet.dll" />
+    <Content Include="ShapesRuntime.dll" />
+    <Content Include="Sigtrap.VrTunnellingPro.dll" />
+    <Content Include="SMDiagnostics.dll" />
+    <Content Include="System.ComponentModel.Composition.dll" />
+    <Content Include="System.ComponentModel.DataAnnotations.dll" />
+    <Content Include="System.Configuration.dll" />
+    <Content Include="System.Configuration.Install.dll" />
+    <Content Include="System.Core.dll" />
+    <Content Include="System.Data.DataSetExtensions.dll" />
+    <Content Include="System.Data.dll" />
+    <Content Include="System.Data.Entity.dll" />
+    <Content Include="System.Data.Linq.dll" />
+    <Content Include="System.Data.OracleClient.dll" />
+    <Content Include="System.Data.Services.Client.dll" />
+    <Content Include="System.Data.Services.dll" />
+    <Content Include="System.Design.dll" />
+    <Content Include="System.DirectoryServices.dll" />
+    <Content Include="System.DirectoryServices.Protocols.dll" />
+    <Content Include="System.dll" />
+    <Content Include="System.Drawing.Design.dll" />
+    <Content Include="System.Drawing.dll" />
+    <Content Include="System.EnterpriseServices.dll" />
+    <Content Include="System.IdentityModel.dll" />
+    <Content Include="System.IdentityModel.Selectors.dll" />
+    <Content Include="System.IO.Compression.dll" />
+    <Content Include="System.IO.Compression.FileSystem.dll" />
+    <Content Include="System.Json.dll" />
+    <Content Include="System.Management.dll" />
+    <Content Include="System.Messaging.dll" />
+    <Content Include="System.Net.dll" />
+    <Content Include="System.Net.Http.dll" />
+    <Content Include="System.Net.Http.Formatting.dll" />
+    <Content Include="System.Net.Http.WebRequest.dll" />
+    <Content Include="System.Numerics.dll" />
+    <Content Include="System.Numerics.Vectors.dll" />
+    <Content Include="System.Reflection.Context.dll" />
+    <Content Include="System.Runtime.Caching.dll" />
+    <Content Include="System.Runtime.DurableInstancing.dll" />
+    <Content Include="System.Runtime.Remoting.dll" />
+    <Content Include="System.Runtime.Serialization.dll" />
+    <Content Include="System.Runtime.Serialization.Formatters.Soap.dll" />
+    <Content Include="System.Security.dll" />
+    <Content Include="System.ServiceModel.Activation.dll" />
+    <Content Include="System.ServiceModel.Discovery.dll" />
+    <Content Include="System.ServiceModel.dll" />
+    <Content Include="System.ServiceModel.Internals.dll" />
+    <Content Include="System.ServiceModel.Routing.dll" />
+    <Content Include="System.ServiceModel.Web.dll" />
+    <Content Include="System.ServiceProcess.dll" />
+    <Content Include="System.Transactions.dll" />
+    <Content Include="System.Web.Abstractions.dll" />
+    <Content Include="System.Web.ApplicationServices.dll" />
+    <Content Include="System.Web.dll" />
+    <Content Include="System.Web.DynamicData.dll" />
+    <Content Include="System.Web.Extensions.Design.dll" />
+    <Content Include="System.Web.Extensions.dll" />
+    <Content Include="System.Web.Http.dll" />
+    <Content Include="System.Web.Http.SelfHost.dll" />
+    <Content Include="System.Web.Http.WebHost.dll" />
+    <Content Include="System.Web.Mvc.dll" />
+    <Content Include="System.Web.Razor.dll" />
+    <Content Include="System.Web.RegularExpressions.dll" />
+    <Content Include="System.Web.Routing.dll" />
+    <Content Include="System.Web.Services.dll" />
+    <Content Include="System.Web.WebPages.Deployment.dll" />
+    <Content Include="System.Web.WebPages.dll" />
+    <Content Include="System.Web.WebPages.Razor.dll" />
+    <Content Include="System.Windows.Forms.DataVisualization.dll" />
+    <Content Include="System.Windows.Forms.dll" />
+    <Content Include="System.Xaml.dll" />
+    <Content Include="System.Xml.dll" />
+    <Content Include="System.Xml.Linq.dll" />
+    <Content Include="SystemWebTestShim.dll" />
+    <Content Include="Transmtn.dll" />
+    <Content Include="UnhollowerBaseLib.dll" />
+    <Content Include="UnhollowerRuntimeLib.dll" />
+    <Content Include="UniTask.Addressables.dll" />
+    <Content Include="UniTask.dll" />
+    <Content Include="UniTask.DOTween.dll" />
+    <Content Include="UniTask.Linq.dll" />
+    <Content Include="UniTask.TextMeshPro.dll" />
+    <Content Include="Unity.Burst.dll" />
+    <Content Include="Unity.Burst.Unsafe.dll" />
+    <Content Include="Unity.Collections.dll" />
+    <Content Include="Unity.InputSystem.dll" />
+    <Content Include="Unity.Mathematics.dll" />
+    <Content Include="Unity.Postprocessing.Runtime.dll" />
+    <Content Include="Unity.TextMeshPro.dll" />
+    <Content Include="Unity.Timeline.dll" />
+    <Content Include="UnityEngine.AccessibilityModule.dll" />
+    <Content Include="UnityEngine.AIModule.dll" />
+    <Content Include="UnityEngine.AndroidJNIModule.dll" />
+    <Content Include="UnityEngine.AnimationModule.dll" />
+    <Content Include="UnityEngine.ARModule.dll" />
+    <Content Include="UnityEngine.AssetBundleModule.dll" />
+    <Content Include="UnityEngine.AudioModule.dll" />
+    <Content Include="UnityEngine.ClothModule.dll" />
+    <Content Include="UnityEngine.ClusterInputModule.dll" />
+    <Content Include="UnityEngine.ClusterRendererModule.dll" />
+    <Content Include="UnityEngine.CoreModule.dll" />
+    <Content Include="UnityEngine.CrashReportingModule.dll" />
+    <Content Include="UnityEngine.DirectorModule.dll" />
+    <Content Include="UnityEngine.dll" />
+    <Content Include="UnityEngine.DSPGraphModule.dll" />
+    <Content Include="UnityEngine.GameCenterModule.dll" />
+    <Content Include="UnityEngine.GridModule.dll" />
+    <Content Include="UnityEngine.HotReloadModule.dll" />
+    <Content Include="UnityEngine.Il2CppAssetBundleManager.dll" />
+    <Content Include="UnityEngine.Il2CppImageConversionManager.dll" />
+    <Content Include="UnityEngine.ImageConversionModule.dll" />
+    <Content Include="UnityEngine.IMGUIModule.dll" />
+    <Content Include="UnityEngine.InputLegacyModule.dll" />
+    <Content Include="UnityEngine.InputModule.dll" />
+    <Content Include="UnityEngine.JSONSerializeModule.dll" />
+    <Content Include="UnityEngine.LocalizationModule.dll" />
+    <Content Include="UnityEngine.ParticleSystemModule.dll" />
+    <Content Include="UnityEngine.PerformanceReportingModule.dll" />
+    <Content Include="UnityEngine.Physics2DModule.dll" />
+    <Content Include="UnityEngine.PhysicsModule.dll" />
+    <Content Include="UnityEngine.ProfilerModule.dll" />
+    <Content Include="UnityEngine.ScreenCaptureModule.dll" />
+    <Content Include="UnityEngine.SharedInternalsModule.dll" />
+    <Content Include="UnityEngine.SpriteMaskModule.dll" />
+    <Content Include="UnityEngine.SpriteShapeModule.dll" />
+    <Content Include="UnityEngine.StreamingModule.dll" />
+    <Content Include="UnityEngine.SubstanceModule.dll" />
+    <Content Include="UnityEngine.SubsystemsModule.dll" />
+    <Content Include="UnityEngine.TerrainModule.dll" />
+    <Content Include="UnityEngine.TerrainPhysicsModule.dll" />
+    <Content Include="UnityEngine.TextCoreModule.dll" />
+    <Content Include="UnityEngine.TextRenderingModule.dll" />
+    <Content Include="UnityEngine.TilemapModule.dll" />
+    <Content Include="UnityEngine.TLSModule.dll" />
+    <Content Include="UnityEngine.UI.dll" />
+    <Content Include="UnityEngine.UIElementsModule.dll" />
+    <Content Include="UnityEngine.UIModule.dll" />
+    <Content Include="UnityEngine.UmbraModule.dll" />
+    <Content Include="UnityEngine.UNETModule.dll" />
+    <Content Include="UnityEngine.UnityAnalyticsModule.dll" />
+    <Content Include="UnityEngine.UnityConnectModule.dll" />
+    <Content Include="UnityEngine.UnityTestProtocolModule.dll" />
+    <Content Include="UnityEngine.UnityWebRequestAssetBundleModule.dll" />
+    <Content Include="UnityEngine.UnityWebRequestAudioModule.dll" />
+    <Content Include="UnityEngine.UnityWebRequestModule.dll" />
+    <Content Include="UnityEngine.UnityWebRequestTextureModule.dll" />
+    <Content Include="UnityEngine.UnityWebRequestWWWModule.dll" />
+    <Content Include="UnityEngine.VehiclesModule.dll" />
+    <Content Include="UnityEngine.VFXModule.dll" />
+    <Content Include="UnityEngine.VideoModule.dll" />
+    <Content Include="UnityEngine.VRModule.dll" />
+    <Content Include="UnityEngine.WindModule.dll" />
+    <Content Include="UnityEngine.XRModule.dll" />
+    <Content Include="ValueTupleBridge.dll" />
+    <Content Include="VRC.Dynamics.dll" />
+    <Content Include="VRC.SDK3.Dynamics.Contact.dll" />
+    <Content Include="VRC.SDK3.Dynamics.PhysBone.dll" />
+    <Content Include="VRC.SDKBase.Editor.BuildPipeline.dll" />
+    <Content Include="VRC.Udon.ClientBindings.dll" />
+    <Content Include="VRC.Udon.Common.dll" />
+    <Content Include="VRC.Udon.dll" />
+    <Content Include="VRC.Udon.Security.dll" />
+    <Content Include="VRC.Udon.Serialization.AOT.dll" />
+    <Content Include="VRC.Udon.Serialization.OdinSerializer.dll" />
+    <Content Include="VRC.Udon.VM.dll" />
+    <Content Include="VRC.Udon.VRCWrapperModules.dll" />
+    <Content Include="VRC.Udon.Wrapper.dll" />
+    <Content Include="VRC.UI.Core.dll" />
+    <Content Include="VRC.UI.Elements.dll" />
+    <Content Include="VRC.UI.Shared.dll" />
+    <Content Include="VRC.Utility.dll" />
+    <Content Include="VRCCore-Editor.dll" />
+    <Content Include="VRCCore-Standalone.dll" />
+    <Content Include="VRCLog.dll" />
+    <Content Include="VRCSDK2.dll" />
+    <Content Include="VRCSDK3.dll" />
+    <Content Include="VRCSDK3A.dll" />
+    <Content Include="VRCSDKBase.dll" />
+    <Content Include="websocket-sharp.dll" />
+    <Content Include="WindowsBase.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MethodAddressToToken.db" />
+    <None Include="MethodXrefScanCache.db" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y $(TargetFileName) S:\Games\steamapps\common\VRChat\$(TargetFileName)
+exit /b 0</PostBuildEvent>
+  </PropertyGroup>
+</Project>
