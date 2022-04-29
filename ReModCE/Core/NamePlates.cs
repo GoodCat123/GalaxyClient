@@ -71,7 +71,7 @@ namespace ReModCE.Core
             if (noUpdateCount > 200)
                 text = "<color=yellow>Lagging</color>";
             if (noUpdateCount > 500)
-                text = "<color=red>Crashed ( ͡° ͜ʖ ͡°)</color>";
+                text = "<color=red>Crashed</color>";
             statsText.text = $"{customrank} [{player.GetPlatform()}] |" + $"{(player.GetIsMaster() ? " | [<color=#0352ff>WorldHost</color>] |" : "")}" + $" [{text}] |" + $" [FPS: {player.GetFramesColord()}] |" + $" [Ping: {player.GetPingColord()}] " + $" {(player.ClientDetect() ? "| [<color=red>ClientUser</color>]" : "")}";
         }
 

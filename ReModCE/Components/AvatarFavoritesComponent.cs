@@ -122,9 +122,9 @@ namespace ReModCE.Components
         {
             InitializeNetworkClient();
 
-            _searchedAvatarList = new ReAvatarList("ReModCE Search", this);
+            _searchedAvatarList = new ReAvatarList("GalaxyCliént Search", this);
 
-            _favoriteAvatarList = new ReAvatarList("ReModCE Favorites", this, false);
+            _favoriteAvatarList = new ReAvatarList("GalaxyCliént Favorites", this, false);
             _favoriteAvatarList.AvatarPedestal.field_Internal_Action_3_String_GameObject_AvatarPerformanceStats_0 = new Action<string, GameObject, AvatarPerformanceStats>(OnAvatarInstantiated);
             _favoriteAvatarList.OnEnable += () =>
             {
@@ -133,7 +133,7 @@ namespace ReModCE.Components
             };
 
             var parent = GameObject.Find("UserInterface/MenuContent/Screens/Avatar/Favorite Button").transform.parent;
-            _favoriteButton = new ReUiButton("Favorite", new Vector2(-600f, 375f), new Vector2(0.5f, 1f),
+            _favoriteButton = new ReUiButton("Fav+", new Vector2(-600f, 375f), new Vector2(0.5f, 1f),
                 () => FavoriteAvatar(_favoriteAvatarList.AvatarPedestal.field_Internal_ApiAvatar_0),
                 parent);
             _favoriteButton.GameObject.SetActive(AvatarFavoritesEnabled);
@@ -169,7 +169,7 @@ namespace ReModCE.Components
             }
 
             var menu = uiManager.MainMenu.GetMenuPage("Avatars");
-            _enabledToggle = menu.AddToggle("Avatar Favorites", "Enable/Disable avatar favorites (requires VRC+)", AvatarFavoritesEnabled);
+            _enabledToggle = menu.AddToggle("Avatar Favorites", "Enable/Disable avatar favorites (requires VRC+ unfortunately)", AvatarFavoritesEnabled);
             _searchEnabledToggle = menu.AddToggle("Avatar Search", "Enable/Disable avatar search", AvatarSearchEnabled);
             _maxAvatarsPerPageButton = menu.AddButton($"Avatars Per Page: {MaxAvatarsPerPage}",
                 "Set the maximum amount of avatars shown per page",
@@ -288,7 +288,7 @@ namespace ReModCE.Components
         {
             yield return new WaitForSeconds(1f);
             VRCUiPopupManager.prop_VRCUiPopupManager_0.ShowStandardPopupV2("Choose Search",
-                "Choose whether you want to search with ReMod CE or emmVRC", "ReModCE",
+                "Choose whether you want to search with GalaxyCliént or emmVRC", "GalaxyCliént",
                 () =>
                 {
                     SearchAvatars(searchTerm);
@@ -509,7 +509,7 @@ namespace ReModCE.Components
 
         private void OnAvatarInstantiated(string url, GameObject avatar, AvatarPerformanceStats avatarPerformanceStats)
         {
-            _favoriteButton.Text = HasAvatarFavorited(_favoriteAvatarList.AvatarPedestal.field_Internal_ApiAvatar_0.id) ? "Unfavorite" : "Favorite";
+            _favoriteButton.Text = HasAvatarFavorited(_favoriteAvatarList.AvatarPedestal.field_Internal_ApiAvatar_0.id) ? "Fav-" : "Fav+";
         }
 
         private void FavoriteAvatar(ApiAvatar apiAvatar)
@@ -517,7 +517,7 @@ namespace ReModCE.Components
             var isSupporter = APIUser.CurrentUser.isSupporter;
             if (!isSupporter)
             {
-                VRCUiPopupManager.prop_VRCUiPopupManager_0.ShowAlert("ReMod CE", "You need VRC+ to use this feature.\nWe're not trying to destroy VRChat's monetization.");
+                VRCUiPopupManager.prop_VRCUiPopupManager_0.ShowAlert("ReMod CE", "You need VRC+ to use this feature.\nWe're not trying to destroy VRChat's monetization. A small note from GoodCat: I can't fix this");
                 return;
             }
 

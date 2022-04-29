@@ -151,6 +151,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\3rdparty\ml\Managed\UnityEngine.InputModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>D:\Steam\steamapps\common\VRChat\MelonLoader\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <Private>false</Private>
       <SpecificVersion>False</SpecificVersion>
@@ -273,6 +276,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvatarPostProcess\AntiCrashClothPostProcess.cs" />
+    <Compile Include="AvatarPostProcess\AntiCrashDynamicBoneColliderPostProcess.cs" />
+    <Compile Include="AvatarPostProcess\AntiCrashDynamicBonePostProcess.cs" />
+    <Compile Include="AvatarPostProcess\AntiCrashLightSourcePostProcess.cs" />
+    <Compile Include="AvatarPostProcess\AntiCrashMaterialPostProcess.cs" />
+    <Compile Include="AvatarPostProcess\AntiCrashParticleSystemPostProcess.cs" />
+    <Compile Include="AvatarPostProcess\AntiCrashRendererPostProcess.cs" />
+    <Compile Include="AvatarPostProcess\AntiCrashShaderPostProcess.cs" />
+    <Compile Include="Components\AntiAvatarCrashComponent.cs" />
     <Compile Include="Components\AvatarFavoritesComponent.cs" />
     <Compile Include="Components\CalibrationSavingComponent.cs" />
     <Compile Include="Components\CopyUserInformationComponent.cs" />
@@ -289,6 +301,8 @@
     <Compile Include="Components\LineTracerComponent.cs" />
     <Compile Include="Components\LoadingMusicComponent.cs" />
     <Compile Include="Components\MediaControlComponent.cs" />
+    <Compile Include="Components\MenuComponent.cs" />
+    <Compile Include="Components\NamePlatesComponent.cs" />
     <Compile Include="Components\PopupExComponent.cs" />
     <Compile Include="Components\AvatarHistoryComponent.cs" />
     <Compile Include="Components\PortalConfirmationComponent.cs" />
@@ -297,13 +311,16 @@
     <Compile Include="Components\ThirdPersonComponent.cs" />
     <Compile Include="Components\VRCNewsAdjustment.cs" />
     <Compile Include="Components\WireframeComponent.cs" />
+    <Compile Include="Components\WorldSpoofComponent.cs" />
     <Compile Include="Config\AvatarProtectionConfig.cs" />
     <Compile Include="Config\Config.cs" />
+    <Compile Include="Core\AntiCrashUtils.cs" />
     <Compile Include="Core\ApiError.cs" />
     <Compile Include="Core\BinaryGZipSerializer.cs" />
     <Compile Include="Core\DynamicContractResolver.cs" />
     <Compile Include="Core\NamePlates.cs" />
     <Compile Include="Core\ReAvatar.cs" />
+    <Compile Include="Core\ShaderUtils.cs" />
     <Compile Include="Core\TaskExtensions.cs" />
     <Compile Include="Exploits\Event1-USpeak.cs" />
     <Compile Include="Exploits\Event6.cs" />
